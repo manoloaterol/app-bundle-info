@@ -1,7 +1,7 @@
 {
   "name": "app-bundle-info",
   "description": "Get information from application bundle files (ipa/apk)",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": "ipa,bundle,app,plist,info,unzip,apk,android,manifest",
   "license": "MIT",
   "dependencies": {
@@ -26,6 +26,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jakubknejzlik/app-bundle-info.git"
+    "url": "https://github.com/manoloaterol/app-bundle-info.git"
   }
 }
