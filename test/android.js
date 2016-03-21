@@ -1,6 +1,6 @@
-var AppBundleInfo = require('../index')
-var assert = require('assert')
-var fs = require('fs')
+var AppBundleInfo = require('../index');
+var assert = require('assert');
+var fs = require('fs');
 
 describe('android',function(){
     it('should load and parse manifest from file',function(done){
@@ -29,6 +29,8 @@ describe('android',function(){
             assert.equal(data.package,'com.octo.android.robodemo.sample');
 
             abi.getIconFile(function(err,iconData){
+              console.log('IconData:');
+              console.log(iconData);
                 assert.ifError(err);
                 done();
             })
