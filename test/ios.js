@@ -36,7 +36,21 @@ describe('ios',function(){
 
                 abi.getIconFile(function(err,iconData){
                     assert.ifError(err);
+
+
+                  var chunks = [];
+                  var data = '';
+                  iconData.on('data', function(chunk) {
+                    chunks.push(chunk);
+                    data += chunk.toString('base64');
+                    console.log('chunk:', chunk.length);
+                  });
+                  iconData.on('end', function() {
+                    var result = Buffer.concat(chunks);
+                    console.log('final result:', result.length);
+                    console.log(data);
                     cb();
+                  });
                 })
             });
         },done);
