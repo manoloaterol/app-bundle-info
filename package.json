@@ -1,7 +1,7 @@
 {
   "name": "app-bundle-info",
   "description": "Get information from application bundle files (ipa/apk)",
-  "version": "0.1.6",
+  "version": "0.2.2",
   "keywords": "ipa,bundle,app,plist,info,unzip,apk,android,manifest",
   "license": "MIT",
   "dependencies": {
@@ -12,11 +12,12 @@
     "fs-extra": "^0.24.0",
     "fstream": "^1.0.8",
     "lock": "^0.1.2",
+	"mocha": "^2.5.3",
     "multi-glob": "^1.0.1",
     "plist": "^1.1.0",
     "stream-to-buffer": "0.1.0",
     "tmp": "0.0.28",
-    "unzip": "git+https://github.com/jakubknejzlik/node-unzip-2.git"
+    "yauzl": "^2.6.0"
   },
   "scripts": {
     "test": "mocha test"

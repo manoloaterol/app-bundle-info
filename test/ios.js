@@ -19,6 +19,9 @@ describe('ios',function(){
                 assert.equal(data.CFBundleVersion,file.version);
                 assert.equal(data.CFBundleName,file.name);
 
+                assert.equal(abi.getVersionCode(),file.version);
+                assert.equal(abi.getName(),file.name);
+
                 cb()
             });
         },done);
@@ -52,6 +55,22 @@ describe('ios',function(){
                     cb();
                   });
                 })
+            });
+        },done);
+    })
+
+    it('should load and get the icon from ipa using the plist',function(done){
+        this.timeout(5000);
+        async.forEach(files,function(file,cb){
+            var abi = new AppBundleInfo.iOS(file.file);
+
+            abi.getPlist(function(err, data){
+                if(err)return cb(err);
+
+                abi.getIconFile(function(err, streamIcon) {
+                    if(err) return cb(new Error("Cannot read icon from this iOS package"));
+                    cb();
+                });
             });
         },done);
     })
